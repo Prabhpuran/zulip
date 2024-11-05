@@ -313,6 +313,14 @@ export class BuddyList extends BuddyListConf {
 
         this.update_empty_list_placeholders();
         this.fill_screen_with_content();
+
+        // `populate` always rerenders all user rows, so we add new event
+        // handlers to all of them.
+        $("#user-list .user-profile-picture img")
+            .off("load")
+            .on("load", function (this: HTMLElement) {
+                $(this).closest(".user-profile-picture").toggleClass("avatar_placeholder", false);
+            });
     }
 
     update_empty_list_placeholders(): void {

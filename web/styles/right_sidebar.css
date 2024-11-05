@@ -264,6 +264,10 @@ $user_status_emoji_width: 24px;
         margin: 2px;
     }
 
+    .avatar_placeholder {
+        background-color: var(--color-buddy-list-avatar-loading);
+    }
+
     .unread_count:not(.hide) {
         margin-right: 2px;
     }
